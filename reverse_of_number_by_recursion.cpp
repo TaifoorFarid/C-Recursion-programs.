@@ -1,18 +1,20 @@
 #include<stdio.h>
-int numberReverse(int n);
+int numRev(int n);
 main()
 {
 	int num;
 	printf("Enter a number: ");
 	scanf("%d", &num);
 	
-	int res = numberReverse(num);
+	int res = numRev(num);
 	printf("The reverse of %d: %d", num, res);
 }
 
-int numberReverse(int n)
+int numRev(int n)
 {
-	if(n < 10)
-	return n;
-	return 10*(n%10) + numberReverse(n/10);
+	static int rev;
+	if(n == 0)
+	return rev;
+	rev = rev * 10 + (n%10);
+	numbRev(n/10);
 }
